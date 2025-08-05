@@ -1,0 +1,26 @@
+.customer-table-container {
+  box-sizing: border-box;
+    /* Mobile defaults */
+    /* contentWidth - sidebar (gone 0px) - scrollbar (16px) - padding (2 x 16px) - borders (2px) - fixedcols (324px) */
+    --width-collapsed: calc(var(--content-width) - 16px - 0px - 32px - 2px - 400px);
+    --width-expanded: var(--width-collapsed);
+    
+    /* Default to collapsed */
+    --tickets-subject-width: var(--width-collapsed);
+    --invoice-name-width: var(--tickets-subject-width);
+  }
+  
+  /* Just switch between pre-calculated values */
+  [data-slot="sidebar"][data-state="expanded"] ~ [data-slot="sidebar-inset"] .customer-table-container {
+    --tickets-subject-width: var(--width-expanded);
+  }
+  
+  /* threshold above mobile */
+  @media (min-width: 768px) {
+    .customer-table-container {
+      /* contentWidth - sidebar (expanded 256px) - scrollbar (16px) - padding (2 x 16px) - borders (2px) - fixedcols (324px) */
+      --width-expanded: calc(var(--content-width) - 16px - 256px - 32px - 2px - 400px);
+      /* contentWidth - sidebar (collapsed 48px) - scrollbar (16px) - padding (2 x 16px) - borders (2px) - fixedcols (324px) */
+      --width-collapsed: calc(var(--content-width) - 16px - 48px - 32px - 2px - 400px);
+    }
+  }
