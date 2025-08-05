@@ -1,6 +1,7 @@
 .st*
 *.log
 notes.txt
+screenshots/
 
 # Environment files
 *.env
