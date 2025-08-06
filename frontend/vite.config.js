@@ -13,17 +13,5 @@ export default defineConfig({
   },
   server: {
     historyApiFallback: true, // For dev server
-  },
-  build: {
-    rollupOptions: {
-      // Code splitting configuration
-      output: {
-        manualChunks: {
-          vendor: ['react', 'react-dom', 'react-router-dom'],
-          // Split your pages into separate chunks
-          tickets: ['./src/pages/TicketsPage', './src/pages/TicketDetail'],
-        }
-      }
-    }
   }
 })
