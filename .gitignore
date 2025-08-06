@@ -4,8 +4,7 @@ notes.txt
 screenshots/
 
 # Environment files
-*.env
-.env*
+.env
 
 # Node modules
 node_modules/
